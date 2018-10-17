@@ -57,42 +57,57 @@ app.post('/api/v1/temas',(req,res) =>{
 
 app.put('/api/v1/temas/:id',(req,res)=>{
     //Si no exite retorno 404
-    const tema = temas.find(c => c.id === parseInt(req.params.id));
-    if(!tema) {
-        res.status(404).send('El ID del tema no fue encontrado.');
-        return;
-    }
+    mongo.connect(url, function(err, db){
+        const tema = db.collection('data').find(c => c.id === parseInt(req.params.id));
+        if(!tema) {
+            res.status(404).send('El ID del tema no fue encontrado.');
+            return;
+        }
+        //Se hace el update
+        tema.name = req.body.name;
+        db.send(tema); 
+        db.close();
+    });
     //Se hace el update
     if(!req.body.name){
         // 400 BAD request
         res.status(400).send('Debe el nombre de un ingresar un tema');
         return;
-    }
-    tema.name = req.body.name;
-    res.send(tema);  
+    }  
     res.status(200);  
 });
 
 app.delete('/api/v1/temas/:id',(req,res)=>{
     //Si no exite retorno 404
-    const tema = temas.find(c => c.id === parseInt(req.params.id));
-    if(!tema) {
-        res.status(404).send('El ID del tema no fue encontrado.');
-        return;
-    }
 
-    //Se hace el update
-    const index = temas.indexOf(tema);
-    temas.splice(index,1);
+    mongo.connect(url, function(err, db){
+        const tema = db.collection('data').find(c => c.id === parseInt(req.params.id));
+        if(!tema) {
+            res.status(404).send('El ID del tema no fue encontrado.');
+            return;
+        }
+        //Se hace el update
+        const index = db.indexOf(tema);
+        db.splice(index,1);
+        db.close();
+    });
+
     res.send(tema);    
 });
 
 app.get('/api/v1/temas/:id',(req, res) =>{
     const tema = temas.find(c => c.id === parseInt(req.params.id));
-    if(!tema) {
-        res.status(404).send('El ID del tema no fue encontrado.');
-        return;
-    }
+    
+
+    mongo.connect(url, function(err, db){
+        const tema = db.collection('data').find(c => c.id === parseInt(req.params.id));
+        if(!tema) {
+            res.status(404).send('El ID del tema no fue encontrado.');
+            return;
+        }
+        db.close();
+    });
+
     res.send(tema);
     res.status(200);
 });
