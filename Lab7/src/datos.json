@@ -1,0 +1,46 @@
+{
+    "datos": [
+        {
+            "nombre":"Annie",
+            "clase":"Mage",
+            "dificutad":"Low",
+            "raza":"Human",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/d/d4/Super_Galaxy_Annie_profileicon.png/revision/latest?cb=20171003201422&format=original"
+        },
+        {
+            "nombre":"Jinx",
+            "clase":"Marksman",
+            "dificutad":"Medium",
+            "raza":"Human",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/e/eb/Odyssey_Jinx_profileicon.png/revision/latest?cb=20180911214139&format=original"
+        },
+        {
+            "nombre":"Lux",
+            "clase":"Mage",
+            "dificutad":"Medium",
+            "raza":"Humano",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/7/73/Lunar_Empress_Lux_profileicon.png/revision/latest?cb=20180617163733&format=original"
+        },
+        {
+            "nombre":"Master Yi",
+            "clase":"Figther",
+            "dificutad":"low",
+            "raza":"Human",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/e/ea/Eternal_Sword_Yi_profileicon.png/revision/latest?cb=20170915210017"
+        },
+        {
+            "nombre":"Talon",
+            "clase":"Assasin",
+            "dificutad":"Medium",
+            "raza":"Human",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e3/Enduring_Sword_Talon_profileicon.png/revision/latest?cb=20180815222938"
+        },
+        {
+            "nombre":"Teemo",
+            "clase":"Marksman",
+            "dificutad":"Low",
+            "raza":"Yordle",
+            "icono": "https://vignette.wikia.nocookie.net/leagueoflegends/images/4/47/Astronaut_Teemo_profileicon.png/revision/latest?cb=20170505021325&format=original"
+        }
+    ]
+}
